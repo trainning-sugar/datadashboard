@@ -1,0 +1,60 @@
+@font-face {
+  font-family: Bitter;
+  src: url('fonts/Bitter/Bitter-Bold.ttf'), url('fonts/Bitter/Bitter-Regular.ttf')
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('fonts/Open_Sans/OpenSans-Regular.ttf'), url('fonts/Open_Sans/OpenSans-Bold.ttf')
+}
+
+.bg-yellow {
+  color: #FFE521;
+}
+
+.bg-magenta {
+  color: #FF009E;
+}
+
+.bg-menta {
+ color: #56F89A;    
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Bitter", sans-serif;
+}
+
+
+
+/* ==============
+    MOBILE: Firts
+   ============== */
+
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 480px) {
+ 
+}
+
+@media only screen and (min-width: 768px) {
+  
+}
+
+@media only screen and (min-width: 1140px) {
+ 
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+
