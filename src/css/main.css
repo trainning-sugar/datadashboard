@@ -29,6 +29,10 @@ h5 {
   font-family: "Bitter", sans-serif;
 }
 
+container-flexbox {
+  display: flex;
+  justify-content: space-between;
+}
 
 
 /* ==============

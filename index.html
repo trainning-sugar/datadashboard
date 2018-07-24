@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,23 +14,69 @@
   <header>
     <h1>Datadashboard</h1>
   </header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          <img src="icon-lab.jpg" alt="Laboratoria código que transforma" width="50" height="50">
-        </a>
-        <button id="button-menu" class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="icon-lab.jpg" alt="Laboratoria código que transforma" width="50" height="50">
+    </a>
+    <button id="button-menu" class="navbar-toggler navbar-toggler-icon" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    </button>
+    <div class="collapse navbar-collapse container-flexbox" id="navbarSupportedContent">
+      <form class="form-inline my-2 my-lg-0">
+        <div class="form-group">
+          <label for="generation">Generacion</label>
+          <select class="form-control" id="generation">
+            <option value="generation">año</option>
+            <option>2018</option>
+            <option>2017</option>
+            <option>2016</option>
+            <option>2015</option>
+          </select>
         </div>
-      </nav>
+        <div class="form-group">
+          <label for="campuses">Sede</label>
+          <select class="form-control" id="campuses">
+            <option value="sede">sede</option>
+            <option value="a">Arequipa</option>
+            <option value="cdmx">Ciudad de México</option>
+            <option value="gdl">Guadalajara</option>
+            <option value="lim">Lima</option>
+            <option value="stg">Santiago</option>
+            <option value="spl">Sao Paulo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="campuses">Ordenar por</label>
+          <select class="form-control" id="campuses">
+            <option value="sede">Criterios</option>
+            <option value="a">Nombre</option>
+            <option value="cdmx">Completitud</option>
+            <option value="gdl">Ejercicios</option>
+            <option value="lim">Quizzes</option>
+            <option value="stg">Santiago</option>
+            <option value="spl">Sao Paulo</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+            <label class="form-check-label" for="exampleRadios1">
+             Asc
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+             Desc
+            </label>
+          </div>
+        </div>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
   <script src="src/js/index.js"></script>
 </body>
-
 </html>
+
