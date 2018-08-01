@@ -33,8 +33,16 @@ h5 {
     MOBILE: Firts
    ============== */
 
-.item {
-  outline: 1px solid red;
+.hidden-sm {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+#navbar-content {
+  margin-top: 1em;
 }
 
 /* ==========================================================================
@@ -44,8 +52,15 @@ h5 {
 @media only screen and (min-width: 480px) {}
 
 @media only screen and (min-width: 768px) {
-  #collapse-navbar-content {
-    display: block !important;
+  .hidden-lg {
+    display: none;
+  }
+  h4 {
+    display: none;
+  }
+  .collapse-navbar-header {
+    display: block;
+    min-width: 40%;
   }
 }
 
