@@ -32,27 +32,52 @@
         <form class="d-flex flex-column" id="navbar-content">
           <h4 class="text-center">Consulta el avance de las estudiantes</h4>
           <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+              <option selected>Sede</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+              <option selected>Generación</option>
+              <option value="1">2018</option>
+              <option value="2">2017</option>
+              <option value="3">2016</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+              <option selected>Cohort</option>
+              <option value="1">2018</option>
+              <option value="2">2017</option>
+              <option value="3">2016</option>
+            </select>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword1">Ordenar por</label>
+            <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+              <option selected></option>
+              <option value="1">
+                <span>Nombre</span>
+              </option>
+              <option value="2">% Completitud Total</option>
+              <option value="3">% Ejercicios Autocorregidos</option>
+              <option value="3">% Quizzes Completados</option>
+              <option value="4">Promedio Quizzes Completados</option>
+              <option value="3">% Lecturas Completadas</option>
+            </select>
           </div>
           <div class="form-group form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <label class="form-check-label" for="exampleCheck1">Asc</label>
           </div>
-          <button>Click</button>
+          <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa nombre de estudiante">
+            <small id="emailHelp" class="form-text text-muted">Se mostrarán los datos correspondientes al nombre de la estudiante</small>
+          </div>
+          <button type="submit" class="btn bg-magenta">Consultar</button>
         </form>
       </div>
     </div>
