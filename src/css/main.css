@@ -17,7 +17,7 @@
 }
 
 .bg-menta {
- color: #56F89A;    
+  color: #56F89A;
 }
 
 body,
@@ -29,36 +29,28 @@ h5 {
   font-family: "Bitter", sans-serif;
 }
 
-container-flexbox {
-  display: flex;
-  justify-content: space-between;
-}
-
-
 /* ==============
     MOBILE: Firts
    ============== */
 
+.item {
+  outline: 1px solid red;
+}
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
- 
-}
+@media only screen and (min-width: 480px) {}
 
 @media only screen and (min-width: 768px) {
-  
+  #collapse-navbar-content {
+    display: block !important;
+  }
 }
 
-@media only screen and (min-width: 1140px) {
- 
-
-}
+@media only screen and (min-width: 1140px) {}
 
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-
-
