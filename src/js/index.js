@@ -37,7 +37,6 @@ const searchCohorts = (sede, year) => {
   }
 }
 
-
 Promise.all([getAjaxRequest('https://api.laboratoria.la/campuses'), getAjaxRequest('https://api.laboratoria.la/cohorts')])
   .then(data => {
     const [campuses, allCohorts] = data;
@@ -46,6 +45,7 @@ Promise.all([getAjaxRequest('https://api.laboratoria.la/campuses'), getAjaxReque
   });
 
 document.addEventListener('DOMContentLoaded', _ => {
+
   const buttonMenu = document.getElementById('button-menu');
   const form = document.getElementById('navbar-content');
 
