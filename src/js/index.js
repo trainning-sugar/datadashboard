@@ -4,28 +4,45 @@ const path = {
   year: null
 }
 
-const renderOptionsCampus = campuses => {
-  const selectCampus = document.getElementById('campuses')
+const renderOptionsCampus = (campuses, id) => {
+  const selectCampus = document.getElementById(id)
   campuses.filter(campus => campus.active)
     .reverse()
-    .forEach(campus => {
-      console.log(campus);
-      selectCampus.firstElementChild.insertAdjacentHTML('afterend', `<option value=${campus.id}>${campus.name}</option>`);
-    });
+    .forEach(campus => selectCampus.firstElementChild.insertAdjacentHTML('afterend', `<option value=${campus.id}>${campus.name}</option>`));
 };
 
-const findCohort = (sede, year) => {
-  if (sede && year) {
-    console.log(sede + year);
+const renderCohorts = (cohorts, id) => {
+  if (!cohorts.length) {
+    alert('La sede y generación seleccionado no tienen cohorts asignados');
   }
-
+  const selectCohort = document.getElementById(id);
+  selectCohort.innerHTML = '';
+  const optionSelected = document.createElement('option');
+  const optionTextNode = document.createTextNode('Cohorts');
+  optionSelected.appendChild(optionTextNode);
+  optionSelected.setAttribute('selected', 'selected');
+  selectCohort.appendChild(optionSelected);
+  cohorts.forEach(cohort => selectCohort.firstElementChild.insertAdjacentHTML('afterend', `<option value=${cohort.id}>${cohort.id}</option>`));
 }
+
+const searchCohorts = (sede, year) => {
+  if (sede && year) {
+    const cohorts = path.allCohorts.reduce((prev, cur) => {
+      if (`${cur.id.split("-")[0]}${cur.id.split("-")[1]}` === (`${sede}${year}`)) {
+        prev.push(cur);
+      }
+      return prev;
+    }, []);
+    renderCohorts(cohorts, 'cohorts');
+  }
+}
+
 
 Promise.all([getAjaxRequest('https://api.laboratoria.la/campuses'), getAjaxRequest('https://api.laboratoria.la/cohorts')])
   .then(data => {
     const [campuses, allCohorts] = data;
     path.allCohorts = allCohorts;
-    renderOptionsCampus(campuses);
+    renderOptionsCampus(campuses, 'campuses');
   });
 
 document.addEventListener('DOMContentLoaded', _ => {
@@ -38,16 +55,16 @@ document.addEventListener('DOMContentLoaded', _ => {
   });
 
   form.addEventListener('change', e => {
-    console.log(e.target);
-    switch (true) {
-      case (e.target.id === 'campuses'):
-        path.sede = e.target.value;
-        break;
-      case (e.target.id === "year"):
-        path.year = e.target.value;
-        break;
+    if (e.target.id === "campuses") {
+      path.sede = e.target.value;
+      searchCohorts(path.sede, path.year);
+    } else if (e.target.id === "year") {
+      path.year = e.target.value;
+      searchCohorts(path.sede, path.year);
     }
-    findCohort(path.sede, path.year)
+    //console.log(searchCohorts(path.sede, path.year));
+    // renderCohorts(searchCohorts(path.sede, path.year), 'cohorts')
+    //console.log(path.cohortBySede);
   })
 
 
