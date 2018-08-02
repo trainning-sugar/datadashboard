@@ -4,7 +4,7 @@ const path = {
   year: null
 }
 
-const renderOptionsCampus = (campuses, id) => {
+const renderCampus = (campuses, id) => {
   const selectCampus = document.getElementById(id)
   campuses.filter(campus => campus.active)
     .reverse()
@@ -42,7 +42,7 @@ Promise.all([getAjaxRequest('https://api.laboratoria.la/campuses'), getAjaxReque
   .then(data => {
     const [campuses, allCohorts] = data;
     path.allCohorts = allCohorts;
-    renderOptionsCampus(campuses, 'campuses');
+    renderCampus(campuses, 'campuses');
   });
 
 document.addEventListener('DOMContentLoaded', _ => {
@@ -55,16 +55,16 @@ document.addEventListener('DOMContentLoaded', _ => {
   });
 
   form.addEventListener('change', e => {
-    if (e.target.id === "campuses") {
-      path.sede = e.target.value;
-      searchCohorts(path.sede, path.year);
-    } else if (e.target.id === "year") {
-      path.year = e.target.value;
-      searchCohorts(path.sede, path.year);
+    switch (true) {
+      case (e.target.id === 'campuses'):
+        path.sede = e.target.value;
+        searchCohorts(path.sede, path.year);
+        break;
+      case (e.target.id === "year"):
+        path.year = e.target.value;
+        searchCohorts(path.sede, path.year);
+        break;
     }
-    //console.log(searchCohorts(path.sede, path.year));
-    // renderCohorts(searchCohorts(path.sede, path.year), 'cohorts')
-    //console.log(path.cohortBySede);
   })
 
 
