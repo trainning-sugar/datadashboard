@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc mocha test/**/**.spec.js"
+    "test-browser": "opener test/index.html",
+    "test-node": "nyc mocha test/headless.js && nyc report --reporter=html",
+    "test": "npm run test-node && npm run test-browser"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.1.2",
     "mocha": "^5.2.0",
-    "nyc": "^12.0.2"
+    "nyc": "^12.0.2",
+    "opener": "^1.4.3"
   }
 }
