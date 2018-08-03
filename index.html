@@ -48,26 +48,34 @@
             <select class="custom-select" id="cohorts"></select>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Ordenar por</label>
-            <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+            <label for="orderBy">Ordenar por</label>
+            <select class="custom-select" id="orderBy">
               <option selected></option>
-              <option value="1">
-                <span>Nombre</span>
-              </option>
+              <option value="1">Nombre Estudiante</option>
               <option value="2">% Completitud Total</option>
               <option value="3">% Ejercicios Autocorregidos</option>
-              <option value="3">% Quizzes Completados</option>
-              <option value="4">Promedio Quizzes Completados</option>
-              <option value="3">% Lecturas Completadas</option>
+              <option value="4">% Quizzes Completados</option>
+              <option value="5">Promedio Quizzes Completados</option>
+              <option value="6">% Lecturas Completadas</option>
             </select>
           </div>
-          <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Asc</label>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="asc" value="asc">
+              <label class="form-check-label" for="asc">
+                Ascendente
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="desc" value="desc">
+              <label class="form-check-label" for="desc">
+                Descendente
+              </label>
+            </div>
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresa nombre de estudiante">
-            <small id="emailHelp" class="form-text text-muted">Se mostrarán los datos correspondientes al nombre de la estudiante</small>
+            <input type="text" class="form-control" id="search" aria-describedby="search" placeholder="Ingresa nombre de estudiante">
+            <small id="search" class="form-text text-muted">Se mostrarán los datos correspondientes al nombre de la estudiante</small>
           </div>
           <button type="submit" class="btn bg-magenta">Consultar</button>
         </form>
@@ -75,6 +83,7 @@
     </div>
   </nav>
   <script src="src/js/utils/get-data-xhr.js"></script>
+  <script src="src/js/data.js"></script>
   <script src="src/js/index.js"></script>
 </body>
 
